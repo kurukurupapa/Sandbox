@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="Tomcat4.1Project02Build_diffbuild">
+    <property environment="env"/>
+    <property name="BUILD_PROJECT_DIR" value="../Tomcat4.1Project02Build"/>
+    <property name="BEFORE_PROJECT_DIR" value="../Tomcat4.1Project02_before"/>
+    <property name="AFTER_PROJECT_DIR" value="../Tomcat4.1Project02"/>
+    <property name="TOMCAT_HOME" value="../../apps/apache-tomcat-4.1.40"/>
+
+    <!-- ================================================== -->
+    <!-- ターゲット -->
+    <!-- ================================================== -->
+
+    <target name="init">
+        <echo message="basedir: ${basedir}"/>
+        <echo message="BUILD_PROJECT_DIR ${BUILD_PROJECT_DIR}"/>
+        <echo message="BEFORE_PROJECT_DIR ${BEFORE_PROJECT_DIR}"/>
+        <echo message="AFTER_PROJECT_DIR ${AFTER_PROJECT_DIR}"/>
+        <mkdir dir="build/deploy"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="build/deploy"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+
+    <target depends="build-subprojects,make-deploy-files" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="${BUILD_PROJECT_DIR}/build.xml" dir="${BEFORE_PROJECT_DIR}" target="build">
+            <property name="TOMCAT_HOME" value="${TOMCAT_HOME}"/>
+        </ant>
+        <ant antfile="${BUILD_PROJECT_DIR}/build.xml" dir="${AFTER_PROJECT_DIR}" target="build">
+            <property name="TOMCAT_HOME" value="${TOMCAT_HOME}"/>
+        </ant>
+    </target>
+
+    <!-- デプロイ用モジュール収集 -->
+    <target name="make-deploy-files">
+        <exec executable="ruby.exe">
+            <arg line="diffcopy.rb ${BEFORE_PROJECT_DIR}/build/deploy ${AFTER_PROJECT_DIR}/build/deploy ${BUILD_PROJECT_DIR}/build/deploy"/>
+        </exec>
+    </target>
+
+    <!-- デプロイ -->
+    <target name="deploy">
+        <ant antfile="${BUILD_PROJECT_DIR}/build.xml" dir="${BUILD_PROJECT_DIR}" target="deploy"/>
+    </target>
+</project>
