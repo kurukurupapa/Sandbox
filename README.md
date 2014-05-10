@@ -6,14 +6,18 @@ javaappp-template
 -----------------
 Javaアプリケーション開発用のテンプレートプロジェクトです。
 EclipseでMavenプロジェクトとして作成してあります。
-Javaのバージョンは、Java SE 6としています。
 
 使用ライブラリ
 --------------
 ### Apache Commons ###
+便利です。
 * [Apache Commons](http://commons.apache.org/)
 
 ### Apache Derby ###
+組み込みデータベースです。
+Java SE 6以降のJDKに、Java DBとして同梱されていたりします。
+非常に手軽に使えるRDBMSとして、当テンプレートプロジェクトに含めています。
+
 * [Apache Derby](http://db.apache.org/derby/)
 
 ### Apache Log4j 1.x ###
