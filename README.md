@@ -7,6 +7,8 @@ javaappp-template
 Javaアプリケーション開発用のテンプレートプロジェクトです。
 EclipseでMavenプロジェクトとして作成してあります。
 
+Mavenのレポート作成で、Checkstyle、FindBugs、JUnit、Cobertura、PMDの結果レポートを出力するようにしています。
+
 使用ライブラリ
 --------------
 ### Apache Commons ###
