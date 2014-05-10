@@ -6,7 +6,7 @@ javaappp-template
 -----------------
 Javaアプリケーション開発用のテンプレートプロジェクトです。
 EclipseでMavenプロジェクトとして作成してあります。
-使用ライブラリは、次になります。
+Javaのバージョンは、Java SE 6としています。
 
 使用ライブラリ
 --------------
@@ -17,7 +17,7 @@ EclipseでMavenプロジェクトとして作成してあります。
 * [Apache Derby](http://db.apache.org/derby/)
 
 ### Apache Log4j 1.x ###
-とりあえず1.x系を使っています。（2.x系に切り替えるべきかな？）
+1.x系を使っています。
 
 * [Apache Log4j](http://logging.apache.org/log4j/)
 * [Apache Log4j 1.2](http://logging.apache.org/log4j/1.2/)
@@ -26,7 +26,7 @@ EclipseでMavenプロジェクトとして作成してあります。
 Spring AOPから呼ばれています。
 
 ### JUnit ###
-4.x系を使っています。
+4.x系を使っています。4.x系はアノテーションを使うので、JavaのJ2SE 5.0以上が必要となります。
 
 ### Spring Framework ###
 主に、DI, AOP, JDBC, OXMを使用しています。
