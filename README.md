@@ -9,7 +9,8 @@ EclipseでMavenプロジェクトとして作成してあります。
 
 使用ライブラリ
 --------------
-### Apache Commons ###
+**Apache Commons**
+
 便利です。
 * [Apache Commons](http://commons.apache.org/)
 
