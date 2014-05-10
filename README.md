@@ -2,10 +2,12 @@ java-template
 =============
 かなり個人的なJava開発用テンプレートプロジェクト群です。
 
-javaappp-template
+javaapp-template
 -----------------
 Javaアプリケーション開発用のテンプレートプロジェクトです。
 EclipseでMavenプロジェクトとして作成してあります。
+
+Eclipseのプロジェクト設定では、Checkstyle, FindBugsが自動的に動作するように設定しています。
 
 Mavenのレポート作成で、Checkstyle、FindBugs、JUnit、Cobertura、PMDの結果レポートを出力するようにしています。
 
