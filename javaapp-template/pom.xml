@@ -86,21 +86,25 @@
   </build>
   <reporting>
     <plugins>
+      <!-- Checkstyleプラグイン -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>2.12.1</version>
       </plugin>
+      <!-- FindBugsプラグイン -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>2.5.3</version>
       </plugin>
+      <!-- JUnit結果レポートプラグイン -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>2.17</version>
       </plugin>
+      <!-- Coberturaプラグイン -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
@@ -114,10 +118,28 @@
           </formats>
         </configuration>
       </plugin>
+      <!-- PMDプラグイン -->
+      <!-- ※JXRプラグインに依存している模様 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.3</version>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.1</version>
+      </plugin>
+      <!-- Javadoc -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+        <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <docencoding>${site.encoding}</docencoding>
+          <charset>${site.encoding}</charset>
+        </configuration>
       </plugin>
     </plugins>
   </reporting>

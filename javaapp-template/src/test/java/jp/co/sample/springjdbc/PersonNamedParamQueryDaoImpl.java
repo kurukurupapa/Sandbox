@@ -122,8 +122,8 @@ public class PersonNamedParamQueryDaoImpl implements PersonNamedParamQueryDao {
      * 検索したレコードの名前と、Beanのプロパティ名は、対応付け可能である必要があります。
      * </p>
      *
-     * @param name
-     *            検索する名前
+     * @param person
+     *            検索条件を保持するPersonインスタンス
      * @return Personインスタンス
      */
     @Override
@@ -148,8 +148,8 @@ public class PersonNamedParamQueryDaoImpl implements PersonNamedParamQueryDao {
      * 検索したレコードの名前と、Beanのプロパティ名が、自動で対応付けられない場合に使用することになりそうです。
      * </p>
      *
-     * @param name
-     *            検索する名前
+     * @param person
+     *            検索条件を保持するPersonインスタンス
      * @return Personインスタンス
      */
     @Override
